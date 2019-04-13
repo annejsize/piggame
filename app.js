@@ -15,15 +15,33 @@ scores = [0,0];
 roundScore = 0;
 activePlayer = 1;
 
-dice = Math.floor(Math.random() * 6) + 1;
-
-
 //setter - sets a value
-document.querySelector("#current-" + activePlayer).textContent = dice;
+//document.querySelector("#current-" + activePlayer).textContent = dice;
 //document.querySelector('#current-' + activePlayer).innerHTML = "<em>" + dice + "</em>";
 
 //getter - gets a value
-var x = document.querySelector('#score-0').textContent;
-console.log(x);
+//var x = document.querySelector('#score-0').textContent;
+
 
 document.querySelector(".dice").style.display = 'none';
+document.getElementById("score-0").textContent = 0;
+document.getElementById("score-1").textContent = 0;
+
+document.getElementById("current-0").textContent = 0;
+document.getElementById("current-1").textContent = 0;
+
+
+
+
+
+document.querySelector('.btn-roll ').addEventListener('click', function() {
+    var dice = Math.floor(Math.random() * 6) + 1;
+    //display result
+    var diceDOM = document.querySelector(".dice");
+    console.log(diceDOM);
+    diceDOM.style.display = 'block';
+    diceDOM.src = "dice-" + dice + '.png';
+
+
+    // update the round score if the roll isnt' one
+});

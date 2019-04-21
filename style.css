@@ -157,4 +157,9 @@ i {
     top: 540px;
     position: absolute;
     left: 41%;
+    font-size: 18px;
+    font-family: 'Lato';
+    width: 200px;
+    padding: 10px;
+    text-transform: uppercase;
 }

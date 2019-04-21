@@ -7,7 +7,7 @@ Player has oppty to input initial winning score (currently set to 100); add an i
 add another dice to the game. if either one of them is an 1, player loses its current score
 */
 
-var scores, roundScore, activePlayer, dice, prevDiceRoll, gamePlaying;
+var scores, roundScore, activePlayer, dice, prevDiceRoll, gamePlaying, winningScore;
 init();
 
 
@@ -60,6 +60,8 @@ document.querySelector('.btn-hold').addEventListener('click', function(){
         //add current socre to global score
         scores[activePlayer] += roundScore;
         document.querySelector('#score-'+ activePlayer).textContent = scores[activePlayer];
+
+        if (!winningScore) winningScore = 20;
 
         if (scores[activePlayer] >= winningScore) {
             document.querySelector('#name-' + activePlayer).textContent = 'Winner!';
